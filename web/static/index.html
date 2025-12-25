@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StormWatch AI - Weather Intelligence</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🌪️</span>
+                <span class="logo-text">StormWatch AI</span>
+            </div>
+
+            <!-- City Selector -->
+            <div class="city-selector">
+                <label>📍 Location</label>
+                <select id="city-select">
+                    <!-- Cities loaded dynamically from API -->
+                </select>
+            </div>
+
+            <!-- Weather Cards -->
+            <div class="weather-section">
+                <h3>Current Weather</h3>
+                <div class="weather-grid">
+                    <div class="weather-card">
+                        <span class="icon">🌡️</span>
+                        <span class="value" id="temp">--°C</span>
+                        <span class="label">Temperature</span>
+                    </div>
+                    <div class="weather-card">
+                        <span class="icon">💧</span>
+                        <span class="value" id="humidity">--%</span>
+                        <span class="label">Humidity</span>
+                    </div>
+                    <div class="weather-card">
+                        <span class="icon">💨</span>
+                        <span class="value" id="wind">-- m/s</span>
+                        <span class="label">Wind</span>
+                    </div>
+                    <div class="weather-card">
+                        <span class="icon">☁️</span>
+                        <span class="value" id="condition">--</span>
+                        <span class="label">Conditions</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Air Quality -->
+            <div class="air-quality-section">
+                <h3>🌬️ Air Quality</h3>
+                <div class="air-quality-display">
+                    <div class="aqi-badge" id="aqi-badge">--</div>
+                    <div class="aqi-details">
+                        <span id="aqi-label">Loading...</span>
+                        <span class="pm-value">PM2.5: <span id="pm25">--</span> µg/m³</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts -->
+            <div class="alerts-section">
+                <h3>⚠️ Alerts</h3>
+                <div id="alerts-container">
+                    <div class="alert-badge clear">✅ No alerts</div>
+                </div>
+            </div>
+
+            <!-- Status -->
+            <div class="status-section">
+                <div class="status-item">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span id="status-text">Connecting...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h1>💬 Weather Assistant</h1>
+                    <p>Ask about weather conditions, forecasts, or safety recommendations</p>
+                </div>
+
+                <!-- Quick Questions -->
+                <div class="quick-questions">
+                    <button onclick="sendQuickQuestion('What is the current weather?')">Current weather?</button>
+                    <button onclick="sendQuickQuestion('Is it safe to drive today?')">Safe to drive?</button>
+                    <button onclick="sendQuickQuestion('Will it rain this afternoon?')">Rain forecast?</button>
+                    <button onclick="sendQuickQuestion('Any severe weather alerts?')">Any alerts?</button>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Messages will appear here -->
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Ask about the weather..."
+                        onkeypress="handleKeyPress(event)">
+                    <button id="send-btn" onclick="sendMessage()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Markdown-it for better table support -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-it.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
