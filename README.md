@@ -8,7 +8,7 @@ A real-time weather advisory system using Apache Kafka, Qdrant, and RAG.
 [![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-3.x-black.svg)](https://kafka.apache.org/)
 [![Qdrant](https://img.shields.io/badge/Qdrant-Vector%20DB-red.svg)](https://qdrant.tech/)
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Architecture](#architecture)
@@ -19,7 +19,7 @@ A real-time weather advisory system using Apache Kafka, Qdrant, and RAG.
 - [Configuration](#configuration)
 - [Team](#team)
 
-## 🌟 Overview
+## Overview
 
 This project implements a real-time weather monitoring system. It demonstrates a data streaming architecture by ingesting weather data from OpenWeatherMap, processing it through Apache Kafka, and storing vector embeddings in Qdrant for retrieval. A RAG (Retrieval-Augmented Generation) chatbot uses this data to answer user queries about the weather.
 
@@ -30,7 +30,7 @@ This project implements a real-time weather monitoring system. It demonstrates a
 - **FastAPI**: Backend API
 - **Sentence Transformers**: Embeddings
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
@@ -157,7 +157,7 @@ Open http://localhost:8000 in your browser.
 - "What's the temperature in Marseille?"
 - "Will it rain today?"
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 stormwatch-ai/
@@ -186,7 +186,7 @@ stormwatch-ai/
 └── README.md                # This file
 ```
 
-## 🔌 API Endpoints
+## API Endpoints
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
@@ -196,7 +196,7 @@ stormwatch-ai/
 | `/api/stats` | GET | Get system statistics |
 | `/api/chat` | POST | Chat with the weather assistant |
 
-## ⚙️ Configuration
+## Configuration
 
 Key environment variables in `.env`:
 
@@ -209,14 +209,14 @@ Key environment variables in `.env`:
 | `QDRANT_API_KEY` | Qdrant API key | Required for cloud |
 | `WEATHER_POLL_INTERVAL` | Update frequency (seconds) | 120 |
 
-## 👥 Team
+## Team
 
 | Name | Role |
 |------|------|
 | **Nardi XHEPI** | Developer |
 | **Augustin BRESSET** | Developer |
 
-## 📄 License
+## License
 
 This project was developed as part of a Data Streaming course project.
 
