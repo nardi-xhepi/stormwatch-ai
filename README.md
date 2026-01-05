@@ -222,4 +222,4 @@ This project was developed as part of a Data Streaming course project.
 
 ---
 
-*M2 Data Science - Data Streaming Project* 🌤️
+*M2 Data Science - Data Streaming Project*
